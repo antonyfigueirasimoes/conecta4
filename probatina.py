@@ -1,9 +1,9 @@
-def tablero(columnas,filas):
+def tablero(filas,columnas):
 
   matrix = []
-  for i in range(filas):
+  for i in range(columnas):
     lists = []
-    for j in range(columnas):
+    for j in range(filas):
       lists.append(0)
     matrix.append(lists)
 
@@ -11,14 +11,15 @@ def tablero(columnas,filas):
 
 salida = [
 
-  [0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0],
-  [0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0]
 
 ]
-print(tablero(7,6))
+print(tablero(6,7))
 
-assert tablero(7, 6) == salida, "No son iguales"
+assert tablero(6,7) == salida, "No son iguales"
