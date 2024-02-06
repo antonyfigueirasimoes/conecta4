@@ -71,3 +71,22 @@ def victoria(tablero,ficha):
       res = True
   
   return res
+
+def victoria_horizontal_fila(tablero,pos_fila,ficha):
+  contador_iguales = 0
+  res = False
+
+  for columna in tablero:
+    if columna[pos_fila] == ficha:
+      contador_iguales += 1
+    else:
+      contador_iguales = 0
+    
+    if contador_iguales == 4:
+      return True
+    
+  return False
+
+  '''
+ - 
+  '''

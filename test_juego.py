@@ -1,4 +1,4 @@
-from juego_functions import crea_tablero, juega, esta_llena, victoria_vertical_col, victoria
+from juego_functions import crea_tablero, juega, esta_llena, victoria_vertical_col, victoria, victoria_horizontal_fila
 
 def test_crear_tablero():
   tab = crea_tablero(4,3)
@@ -48,3 +48,20 @@ def test_victoria_vertical_tablero():
   assert victoria(tab, 'x')
   assert victoria(tab, 'o') == False
 
+def test_victoria_horizontal_fila():
+  tab = crea_tablero(6,7)
+  juega(tab, 0, 'x')
+  juega(tab, 1, 'o')
+  juega(tab, 2, 'x')
+  juega(tab, 3, 'x')
+  juega(tab, 4, 'x')
+  juega(tab, 5, 'x')
+  assert victoria_horizontal_fila(tab, 5, 'x')
+  #
+  #
+  #
+  #
+  #
+  # 
+  # x o x x x x 
+    # # # # # # # 
