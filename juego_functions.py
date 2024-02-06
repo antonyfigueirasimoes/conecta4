@@ -43,6 +43,31 @@ def esta_llena(tablero, columna):
   c = tablero[columna]
   return 0 not in c #Mucho mejor. Verifica cualquier valor que quiera se usado como "ficha de jugador"
       
-      
-      
+
+def victoria_vertical_col(tablero,pos_columna,ficha):
+  contador_iguales = 0
+  columna = tablero[pos_columna]  
+
+  ix = 0
+  while ix < len(columna):
+    if columna[ix] == ficha:
+      contador_iguales += 1
+    else:
+      contador_iguales = 0
+
+    ix += 1
+    if contador_iguales == 4:
+      return True
+    
+  return False 
+
+def victoria(tablero,ficha):
+  contador_iguales = 0
+
+  res = False
+  num_cols = len(tablero)
+  for num_col in range(num_cols):
+    if victoria_vertical_col(tablero,num_col,ficha):
+      res = True
   
+  return res
