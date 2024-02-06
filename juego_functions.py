@@ -61,16 +61,20 @@ def victoria_vertical_col(tablero,pos_columna,ficha):
     
   return False 
 
-def victoria(tablero,ficha):
-  contador_iguales = 0
 
-  res = False
-  num_cols = len(tablero)
-  for num_col in range(num_cols):
-    if victoria_vertical_col(tablero,num_col,ficha):
-      res = True
-  
-  return res
+def victoria(tablero, ficha):
+    # Verificar victoria vertical
+    for columna in range(len(tablero)):
+        if victoria_vertical_col(tablero, columna, ficha):
+            return True
+
+    # Verificar victoria horizontal
+    for fila in range(len(tablero[0])):
+        if victoria_horizontal_fila(tablero, fila, ficha):
+            return True
+
+    return False
+
 
 def victoria_horizontal_fila(tablero,pos_fila,ficha):
   contador_iguales = 0
@@ -87,6 +91,4 @@ def victoria_horizontal_fila(tablero,pos_fila,ficha):
     
   return False
 
-  '''
- - 
-  '''
+

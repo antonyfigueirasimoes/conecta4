@@ -65,3 +65,15 @@ def test_victoria_horizontal_fila():
   # 
   # x o x x x x 
     # # # # # # # 
+  
+  def test_victoria_horizontal_tablero():
+    tab = crea_tablero(6,7)
+    juega(tab, 0,'x')
+    juega(tab, 1,'o')
+    juega(tab, 2,'x')
+    juega(tab, 3,'x')
+    juega(tab, 4,'x')
+    juega(tab, 5,'x')
+    assert test_victoria_horizontal_tablero(tab, 'x') == True
+    assert test_victoria_horizontal_tablero(tab, 'o') == False
+
